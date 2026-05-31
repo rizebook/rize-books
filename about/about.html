@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ライツ書房について</title>
+
+<link rel="stylesheet" href="about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+    <h1 class="song-title">
+        ライツ書房について
+    </h1>
+
+    <p class="about-lead">
+
+        時代を超えて価値ある古書を厳選し、
+        さまざまな本を紹介しています。
+
+    </p>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            店の紹介
+        </div>
+
+        <p>
+            ライツ書房はAmazonで、
+            実用書・絵本・楽譜などをを中心に、
+            約6000冊を常時在庫し販売しています。
+        </p>
+
+        <p>
+            開店から16年、
+            Amazonでは常に95％以上のお客様満足度を維持しており、
+            状態の良い中古本を丁寧に選び、
+            安心してお買い求めいただけるよう心がけています。
+        </p>
+
+        <p>
+            中古本は同じ本でも状態に大きな差があります。
+            当店では、
+            書き込み・傷み・使用感などを細かく確認し、
+            できるだけ状態の良い本を
+            適正な価格でご紹介しています。
+        </p>
+
+        <p>
+            また、
+            商品説明についても、
+            実際の状態がわかりやすいよう
+            丁寧な記載を心がけています。
+        </p>
+
+        <p>
+            発送はご注文から36時間以内を基本としており、
+            雨濡れや配送時の衝撃にも配慮した丁寧な梱包で、
+            安心してお届けできるよう工夫しています。
+        </p>
+
+    </div>
+
+
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            店長のひとこと
+        </div>
+
+        <p>
+            本当に微力ではありますが、
+            本を通じて社会に貢献できていることを
+            うれしく思っています。
+        </p>
+
+        <p>
+            昔の本にも、
+            今の時代に残ってほしい言葉や考え方が
+            たくさんあると思っています。
+        </p>
+
+        <p>
+            気になる一冊との出会いを、
+            ゆっくり楽しんでいただければ嬉しいです。
+        </p>
+
+    </div>
+
+
+
+
+    <div class="lyrics-box">
+
+
+        <a
+            href="https://www.amazon.co.jp/s?i=merchant-items&me=ARX2GI76H4MQ7&s=popularity-rank&fs=true&ref=lp_26286483051_sar"
+            target="_blank">
+
+            Amazon店舗はこちら
+
+        </a>
+
+    </div>
+
+    <div class="contact-link">
+
+      <a href="../contact.html">
+
+       お問い合わせ 
+
+      </a>
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="../index.html">
+            ← TOPページへ戻る
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm002.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+</body>
+
+</html>
+
