@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライツ書房</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ① ヘッダー（ここに追加） -->
+  <header class="header">
+    <h1>ライツ書房</h1>
+    <p>時代を超えて価値ある古書を厳選し、静かな時間とともにお届けします</p>
+  </header>
+
+<div class="bookshelf">
+
+<img src="bookshelf.png" class="shelf">
+
+<!-- 本（自動生成） -->
+<script>
+const titles = [
+/* 1段目 */
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"ライツ書房について",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+
+/* 2段目 */
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+
+/* 3段目 */
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"準備中",
+"たかちゃんの<br>お気に入り"
+];
+
+
+const links = [];
+
+
+links[8] = "about/about.html"
+links[9] = "ehon/example.html"
+links[40] = "music/index.html"
+
+;
+
+
+
+const container = document.querySelector('.bookshelf');
+
+const books =  [
+/* 1段目 */
+[10.2,63,3.6,23.6],
+[14.4,63,3.8,23.6],
+[18.9,63,3.0,23.6],
+[22.5,63,4.1,23.6],
+[27.3,63,3.6,22.7],
+[31.5,63,4.2,23.6],
+[36.4,63,3.7,23.1],
+[40.8,63,4.6,23.6],
+[46.8,63,8.3,27.2,"main"],
+[56.4,63,4,23.6],
+[61.1,63,3.9,22.7],
+[65.9,63,4.1,23.6],
+[70.9,63,4.3,23.6],
+[75.9,63,4,23.6],
+[80.7,63,3.6,23.6],
+[85.2,63,3.9,22.4],
+
+/* 2段目 */
+[10.2,34.2,4.9,20.6],
+[16,34.2,4.9,20.6],
+[21.8,34.2,5.1,20.6],
+[28,34.2,4.6,20.6],
+[33.5,34.2,4.6,20.6],
+[39.1,34.2,4.7,20.6],
+[45.1,34.2,5.2,20.6],
+[51.2,34.2,5.4,20.6],
+[57.9,34.2,5.4,20.6],
+[64.4,34.2,5.1,20.6],
+[70.6,34.2,5.1,20.6],
+[76.8,34.2,5.0,20.6],
+[82.8,34.2,5.1,20.6],
+
+/* 3段目 */
+[10.4,5.9,4.7,21],
+[16.2,5.9,5.2,21],
+[22.6,5.9,5.5,21],
+[29.1,5.9,5.8,21],
+[35.8,5.9,6.2,21],
+[43,5.9,5.7,21],
+[49.5,5.9,5.8,21],
+[56,5.9,5.6,21],
+[62.4,5.9,5.7,21],
+[68.9,5.9,5.8,21],
+[75.7,5.9,5.5,21],
+[82.2,5.9,5.8,21],
+];
+
+while(titles.length < books.length){
+    titles.push("ライツ書房");
+}
+
+books.forEach((b,i)=>{
+  const el = document.createElement("div");
+  el.className = "book";
+
+  const title = titles[i];
+
+  el.style.left   = b[0] + "%";
+  el.style.bottom = b[1] + "%";
+  el.style.width  = b[2] + "%";
+  el.style.height = b[3] + "%";
+
+el.innerHTML = ` 
+  <a href="${links[i] || '#'}">
+ 
+   <div class="inner">
+ 
+    <div class="spine"> 
+     <span class="title">${title}</span> 
+    </div>
+
+ </div> 
+</a> 
+`;
+
+    container.appendChild(el);
+});
+</script>
+
+</div>
+
+  <!-- ③ フッター（ここに追加） -->
+<footer class="footer">
+
+  <p>ライツ書房</p>
+
+  <p>実用書から古書・希少本などさまざまな本を扱っています</p>
+
+  <p>
+    <a href="contact.html">
+     お問い合わせ
+    </a>
+  </p>
+
+  <p class="credit">
+
+    crafted with Chappy
+
+  </p>
+
+</footer>
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="audio/bgm002.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+
+
+</body>
+</html>
