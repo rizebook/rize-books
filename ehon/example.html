@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ぐりとぐら</title>
+
+<link rel="stylesheet" href="detail.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+<div class="page-header">
+
+    <h1>
+        絵本　よんでみた
+    </h1>
+
+    <p>
+        たくさんの絵本の中で
+        たまたま読んでみて
+        ちょっといいなと思った絵本を紹介します
+    </p>
+
+</div>
+
+
+    <h1 class="book-title">
+        ぐりとぐら
+    </h1>
+
+
+
+    <div class="book-info">
+
+        <div class="book-cover">
+
+            <img src="images/guritogura.jpg">
+
+        </div>
+
+
+
+        <div class="book-data">
+
+            <div class="data-row">
+                <span>作者</span>
+                中川李枝子
+            </div>
+
+            <div class="data-row">
+                <span>絵</span>
+                大村百合子
+            </div>
+
+            <div class="data-row">
+                <span>訳</span>
+                -
+            </div>
+
+            <div class="data-row">
+                <span>原作国</span>
+                日本
+            </div>
+
+            <div class="data-row">
+                <span>出版社</span>
+                福音館書店
+            </div>
+
+            <div class="data-row">
+                <span>出版年</span>
+                1967年
+            </div>
+
+            <div class="data-row">
+                <span>大きさ</span>
+                縦20cm、横20cm、厚み1cm            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-box">
+
+        <div class="story-title">
+            あらすじ
+        </div>
+
+        <p>
+            森で大きなたまごを見つけた
+            ぐりとぐら。
+            二人は大きなカステラを作ろうとします。
+        </p>
+
+    </div>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            ひとこと
+        </div>
+
+
+        子どもの頃に読んでも、
+        大人になってから読んでも
+        不思議と安心する絵本です。
+
+    </div>
+
+
+
+
+
+
+    <div class="shop-link">
+
+        <a
+            href="https://www.amazon.co.jp/"
+            target="_blank">
+
+            絵本を探す
+
+        </a>
+
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="../index.html">
+            ← TOPページへ戻る
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgmor006.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+
+
+</body>
+
+</html>

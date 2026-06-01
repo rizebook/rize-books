@@ -1,0 +1,371 @@
+body{
+    margin:0;
+    font-family:'Noto Serif JP', serif;
+    background:#f5f1ea;
+    color:#f4ede2;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+        url("../bg.png") center/cover no-repeat;
+
+    filter:
+        blur(1px)
+        brightness(0.85)
+        sepia(0.15);
+
+    z-index:-1;
+}
+.page-title{
+    text-align:center;
+    padding:30px 0 10px;
+    font-size:32px;
+    letter-spacing:3px;
+}
+
+.music-grid{
+    width:100%;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, 400px);
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.crate{
+    position:relative;
+
+    width:320px;
+
+    height:620px;
+
+    border:6px solid #3b3027;
+
+    border-radius:10px;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        #6a533f 0px,
+        #6a533f 4px,
+        #3f3127 5px,
+        #7a6049 7px,
+        #4a3d32 10px
+    );
+
+    padding:20px;
+
+    overflow:visible;
+}
+
+.records-window{
+    position:relative;
+
+    height:620px;
+
+    overflow:hidden;
+
+
+    padding-top:220px;
+    margin-top:-220px;
+
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+ 
+}
+
+
+.divider{
+    background:#c7b299;
+    color:#2a241f;
+
+    font-weight:bold;
+    text-align:center;
+
+    padding:12px 8px;
+
+    border-radius:4px;
+
+    position:relative;
+
+    margin-top:-8px;
+    margin-bottom:-8px;
+}
+
+.record{
+    position:relative;
+
+    width:340px;
+
+    height:65px;
+
+    margin-bottom:-25px;
+
+    transition:1.4s;
+
+    cursor:pointer;
+
+    
+}
+
+.cover{
+    position:relative;
+
+    transition:1.4s;
+}
+
+.record:hover{
+    transform:translateY(-220px);
+}
+
+.tab{
+    background:#d8c7b0;
+
+    color:#2a241f;
+
+    font-size:15px;
+
+    padding:6px 10px;
+
+    border-radius:5px 5px 0 0;
+
+    width:100%;
+    box-sizing:border-box;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.3);
+
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+.cover{
+    background:#5b4b3e;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    height:340px;
+
+    border-radius:6px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#d9cbb8;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.4),
+        inset 0 0 10px rgba(255,255,255,0.05);
+
+    overflow:hidden;
+
+    filter:blur(0.3px);
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+.cover img{
+    width:80%;
+    height:80%;
+
+    object-fit:contain;
+
+    object-position:top;
+
+    display:block;
+
+    background:#5b4b3e;
+
+    padding:6px;
+
+    box-sizing:border-box;
+}
+.music-header{
+    text-align:center;
+
+    padding:
+        40px
+        20px
+        20px;
+
+    color:#1f1a16;
+}
+
+.music-header h1{
+    margin:0 0 20px;
+
+    font-size:42px;
+
+    letter-spacing:4px;
+
+    font-weight:normal;
+}
+
+.music-header p{
+    max-width:900px;
+
+    margin:0 auto;
+
+    line-height:2;
+
+    font-size:15px;
+
+    color:#2f2925;
+}
+
+
+
+.news-box{
+    width:900px;
+
+    margin:
+        10px auto
+        40px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    border:
+        1px solid
+        rgba(0,0,0,0.08);
+
+    border-radius:10px;
+
+    padding:14px 20px;
+
+    box-sizing:border-box;
+
+    backdrop-filter:blur(4px);
+
+    color:#2c2621;
+}
+
+.news-title{
+    font-size:18px;
+
+    margin-bottom:12px;
+
+    font-weight:bold;
+
+    border-bottom:
+        1px solid
+        rgba(0,0,0,0.15);
+
+    padding-bottom:8px;
+}
+
+.news-content{
+    line-height:1.8;
+
+    font-size:13px;
+}
+
+
+
+.music-footer{
+    text-align:center;
+
+    padding:
+        10px
+        20px
+        40px;
+
+    color:#1f1a16;
+}
+
+.music-footer p{
+    margin-bottom:15px;
+
+    font-size:14px;
+}
+
+.music-footer a{
+    color:#1f1a16;
+
+    text-decoration:none;
+
+    border-bottom:
+        1px solid
+        rgba(0,0,0,0.3);
+
+    padding-bottom:2px;
+}
+
+.music-footer a:hover{
+    opacity:0.7;
+}
+.record a{
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+}
+
+
+#bgm-button{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:9999;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border:none;
+
+    padding:
+        10px 16px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-family:
+        'Noto Serif JP',
+        serif;
+
+    color:#2a241f;
+
+    backdrop-filter:blur(4px);
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.15);
+}
+
+@media(max-width:768px){
+
+    .music-grid{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+    }
+
+    .crate{
+
+        width:320px;
+    }
+
+}

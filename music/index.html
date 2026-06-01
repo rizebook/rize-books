@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>たかちゃんのお気に入り</title>
+
+<link rel="stylesheet" href="music.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="music-header">
+
+    <h1>たかちゃんのお気に入り</h1>
+
+    <p>
+        店長の「たか」です。<br>
+        いい曲がたくさんある過去の音楽から　
+        勝手にわたしのお気に入りの曲を紹介するページです
+    </p>
+
+</header>
+
+<div class="news-box">
+
+    <div class="news-title">
+        お知らせ
+    </div>
+
+    <div class="news-content">
+        
+    <div>2026.06.02　1970s更新</div>
+
+    <div>2026.06.01　ページ仮公開</div>
+
+    </div>
+</div>
+
+
+<button id="bgm-button">
+♪ BGM ON
+</button>
+
+<audio id="bgm" loop>
+    <source src="bgm001.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+</div>
+
+
+<div class="music-grid">
+
+  <!-- 1列目 -->
+  <div class="crate">
+
+<div class="records-window">
+    
+<div class="divider">1970s</div>    
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">まちぶせ　三木聖子</div><a href="matibuse.html"><div class="cover"> <img src="images/matibuse.jpg"></div></a></div>
+    <div class="record"><div class="tab">時代　中島みゆき</div><a href="jidai.html"><div class="cover"> <img src="images/jidai.jpg"></div></a></div>
+<div class="divider">1980s</div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+
+
+  </div>
+
+  </div>
+
+  <!-- 2列目 -->
+  <div class="crate">
+
+<div class="records-window">
+   
+
+<div class="divider">1990s</div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">automatic　宇多田ヒカル</div><a href="automatic.html"><div class="cover"> <img src="images/utada.jpg"></div></a></div>
+
+<div class="divider">2000s</div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+
+  </div>
+
+  </div>
+
+
+  <!-- 3列目 -->
+  <div class="crate">
+
+<div class="records-window">
+
+ <div class="divider">2010s</div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+ <div class="divider">2020s〜</div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+    <div class="record"><div class="tab">準備中</div><div class="cover">準備中</div></div>
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+</div>
+
+<footer class="music-footer">
+
+    <p>
+        リクエストにはお答えできません あしからず
+    </p>
+
+　　<p>
+    <a href="../contact.html">
+        お問い合わせ
+    </a>
+　　</p>
+    <p>
+　　<a href="../index.html"> 
+←TOPページへ戻る
+　　</a>
+　　</p>
+</footer>
+
+</body>
+</html>
