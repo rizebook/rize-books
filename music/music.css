@@ -357,6 +357,8 @@ body::before{
 @media(max-width:768px){
 
     .music-grid{
+        width:100%;
+        margin:20px auto;
 
         grid-template-columns:1fr;
 
@@ -364,8 +366,9 @@ body::before{
     }
 
     .crate{
-
-        width:320px;
+        width:calc(100vw - 40px);
+        max-width:320px;
+        box-sizing:border-box;
     }
 
 }
