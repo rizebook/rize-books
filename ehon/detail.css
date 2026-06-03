@@ -2,6 +2,8 @@
 body{
     margin:0;
 
+    overflow-x:hidden;
+
     font-family:
         'Noto Serif JP',
         serif;
@@ -43,6 +45,9 @@ body::before{
     margin:30px auto;
 
     padding:25px;
+
+    box-sizing:border-box;
+
 }
 
 
@@ -126,6 +131,10 @@ body::before{
     margin-bottom:50px;
 
     font-size:15px;
+
+    padding:0;
+    margin-left:0;
+
 }
 
 .comment-title{
@@ -142,6 +151,10 @@ body::before{
 
 .story-box{
     margin-bottom:50px;
+
+    padding:0;
+    margin-left:0;
+
 }
 
 
@@ -163,6 +176,7 @@ body::before{
     line-height:2;
 
     font-size:15px;
+
 }
 
 
@@ -212,7 +226,7 @@ margin:
 
 
 .page-header h1{
-    font-size:48px;
+    font-size:32px;
 
     font-weight:normal;
 
@@ -276,25 +290,6 @@ margin:
         padding:20px;
     }
 
-    .song-title{
-        font-size:28px;
-
-        letter-spacing:2px;
-    }
-
-    .song-info{
-        flex-direction:column;
-
-        gap:25px;
-    }
-
-    .jacket{
-        width:100%;
-    }
-
-    .movie-box iframe{
-        height:220px;
-    }
 
     .comment-box{
         padding:20px;
@@ -346,6 +341,15 @@ margin:
         margin-bottom:12px;
 
         font-size:14px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .page-header h1{
+        font-size:32px;
+        letter-spacing:2px;
     }
 
 }
