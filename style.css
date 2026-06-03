@@ -395,3 +395,20 @@ button:hover{
     "HGS明朝E",
     serif;
 }
+
+.contact,
+.contact h2,
+.contact label,
+.contact input,
+.contact textarea,
+.contact button,
+.contact a,
+.back a{
+    font-family:'Noto Serif JP', serif;
+}
+
+input,
+textarea,
+button{
+    -webkit-appearance:none;
+}
