@@ -371,10 +371,10 @@ margin:
 
 }
 
-
-.story-title,
-.comment-title,
-.story-box p,
-.comment-box p{
+.story-box{
     border:1px solid red;
+}
+
+.comment-box{
+    border:1px solid blue;
 }
