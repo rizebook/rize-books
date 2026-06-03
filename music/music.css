@@ -373,4 +373,10 @@ body::before{
     .news-box{
         width:95%;
     }
+
+    .music-header h1{
+        font-size:24px;
+        letter-spacing:2px;
+    }
+
 }
