@@ -262,10 +262,6 @@ blockquote{
         padding:20px;
     }
 
-    .data-row{
-        flex-direction:column;
-        gap:4px;
-    }
 
     .data-row span{
         width:auto;

@@ -213,9 +213,9 @@ body::before{
 .music-header h1{
     margin:0 0 20px;
 
-    font-size:42px;
+    font-size:36px;
 
-    letter-spacing:4px;
+    letter-spacing:3px;
 
     font-weight:normal;
 }
