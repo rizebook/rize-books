@@ -386,3 +386,11 @@ button:hover{
         font-size:8px;
     }
 }
+
+.contact {
+  font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    "HGS明朝E",
+    serif;
+}
