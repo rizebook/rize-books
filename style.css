@@ -277,10 +277,11 @@ label{
     color:#555;
 }
 
-input, textarea{
-    padding:10px;
-    border:1px solid #ccc;
-    font-family:serif;
+input,
+textarea,
+button,
+label{
+    font-family:'Noto Serif JP', serif;
 }
 
 button{
