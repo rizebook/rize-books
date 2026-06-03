@@ -357,23 +357,20 @@ body::before{
 @media(max-width:768px){
 
     .music-grid{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
 
-    grid-template-columns:1fr;
+        width:100%;
+        margin:20px auto;
+    }
 
-    justify-items:center;
-
-    } .crate{
-
-    width:320px;
-
-    } 
-   }
-
-
-@media(max-width:768px){
+    .crate{
+        width:320px;
+        margin:0 auto 20px;
+    }
 
     .news-box{
         width:95%;
     }
-
 }
