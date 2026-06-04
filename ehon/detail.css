@@ -383,3 +383,8 @@ margin:
 .comment-title{
     text-indent:0;
 }
+
+.comment-box{
+    padding:0 !important;
+    margin:0 0 50px 0 !important;
+}
