@@ -43,6 +43,9 @@ body::before{
 
  padding:25px;
 
+
+box-sizing:border-box;
+
  }
 
 
@@ -271,3 +274,13 @@ body::before{
     }
 }
 
+@media(max-width:768px){
+
+    .detail-page{
+        width:100%;
+        max-width:100%;
+        padding:20px;
+        box-sizing:border-box;
+    }
+
+}
