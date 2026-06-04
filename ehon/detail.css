@@ -378,3 +378,8 @@ margin:
 .comment-box{
     border:1px solid blue;
 }
+
+.story-title,
+.comment-title{
+    text-indent:0;
+}
