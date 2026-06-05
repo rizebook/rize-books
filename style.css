@@ -412,3 +412,12 @@ textarea,
 button{
     -webkit-appearance:none;
 }
+
+@media(max-width:768px){
+
+    .bookshelf{
+        transform:scale(1.3);
+        transform-origin:top center;
+    }
+
+}
