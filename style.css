@@ -442,3 +442,11 @@ button{
     }
 
 }
+
+@media(max-width:768px){
+
+    .spine{
+        font-size:7px;
+    }
+
+}
