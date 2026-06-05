@@ -420,4 +420,9 @@ button{
         transform-origin:top center;
     }
 
+
+    main{
+        padding-bottom:250px;
+    }
+
 }
