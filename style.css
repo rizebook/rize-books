@@ -446,7 +446,7 @@ button{
 @media(max-width:768px){
 
     .spine{
-        font-size:1px;
+        font-size:0.5px;
     }
 
 }
