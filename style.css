@@ -384,7 +384,7 @@ button:hover{
 
 @media(max-width:768px){
     .title{
-        font-size:4px;
+        font-size:6px;
     }
 }
 
@@ -446,7 +446,7 @@ button{
 @media(max-width:768px){
 
     .spine{
-        font-size:0.5px;
+        font-size:8px;
     }
 
 }
