@@ -385,3 +385,11 @@ margin:
     }
 
 }
+
+
+.story-box p,
+.comment-box p{
+    max-width:40em;
+    margin:0 auto;
+    line-height:2;
+}

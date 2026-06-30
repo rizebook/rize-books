@@ -6,6 +6,10 @@
 <title>ライツ書房</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<meta name="description"
+content="ライツ書房は絵本・音楽を紹介する個人サイトです。絵本の感想や音楽レビュー、店舗紹介を掲載しています。">
+
 </head>
 
 <body>
@@ -13,7 +17,9 @@
   <!-- ① ヘッダー（ここに追加） -->
   <header class="header">
     <h1>ライツ書房</h1>
-    <p>時を超えて価値ある古書を厳選し、静かな時間とともにお届けします</p>
+    <p>時を超えて価値ある古書を厳選し　静かな時間とともにお届けします</p>
+    <p>たまには子供のころに帰って　絵本でものぞいてみませんか</p>
+
   </header>
 
 <div class="bookshelf">
@@ -27,17 +33,17 @@ const titles = [
 "準備中",
 "準備中",
 "準備中",
+"いのちのまつり",
 "準備中",
-"準備中",
-"準備中",
+"おおきな木",
 "準備中",
 "準備中",
 "ライツ書房について",
 "準備中",
 "準備中",
+"おやくそくえほん",
 "準備中",
-"準備中",
-"準備中",
+"だるまさんが",
 "準備中",
 "準備中",
 
@@ -45,21 +51,21 @@ const titles = [
 "準備中",
 "準備中",
 "準備中",
+"教室はまち<br>がうところだ",
+"準備中",
+"しろおうさまと<br>くろおうさま",
+"準備中",
+"もうじき<br>たべられるぼく",
 "準備中",
 "準備中",
-"準備中",
-"準備中",
-"準備中",
-"準備中",
-"準備中",
-"準備中",
-"準備中",
+"おこだで<br>ませんように",
+"バムとケロの<br>おかいもの",
 "準備中",
 
 /* 3段目 */
 "準備中",
 "準備中",
-"準備中",
+"天女銭湯",
 "準備中",
 "準備中",
 "準備中",
@@ -75,8 +81,17 @@ const titles = [
 const links = [];
 
 
+links[3] = "ehon/inotinoma.html"
+links[5] = "ehon/ookinaki.html"
 links[8] = "about/about.html"
-links[9] = "ehon/example.html"
+links[11] = "ehon/oyakusoku.html"
+links[13] = "ehon/daruma.html"
+links[19] = "ehon/matigau.html"
+links[21] = "ehon/sirotokuro.html"
+links[23] = "ehon/moujiki.html"
+links[26] = "ehon/okodade.html"
+links[27] = "ehon/bamkero.html"
+links[31] = "ehon/tennyo.html"
 links[40] = "music/index.html"
 
 ;
@@ -162,6 +177,26 @@ el.innerHTML = `
 </a> 
 `;
 
+let timer;
+
+el.addEventListener("mouseenter", () => {
+
+    timer = setTimeout(() => {
+
+        el.classList.add("active");
+
+    }, 400);
+
+});
+
+el.addEventListener("mouseleave", () => {
+
+    clearTimeout(timer);
+
+    el.classList.remove("active");
+
+});
+
     container.appendChild(el);
 });
 </script>
@@ -173,11 +208,11 @@ el.innerHTML = `
 
   <p>ライツ書房</p>
 
-  <p>実用書から古書・希少本などさまざまな本を扱っています</p>
+  <p>絵本、実用書から古書・希少本などさまざまな本を扱っています</p>
 
   <p>
     <a href="contact.html">
-     お問い合わせ
+     ご意見、お問い合わせ
     </a>
   </p>
 

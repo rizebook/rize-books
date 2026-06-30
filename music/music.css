@@ -115,7 +115,7 @@ body::before{
 
     margin-bottom:-25px;
 
-    transition:1.4s;
+    transition:0.5s;
 
     cursor:pointer;
 
@@ -125,12 +125,13 @@ body::before{
 .cover{
     position:relative;
 
-    transition:1.4s;
+    transition:0.5s;
 }
 
-.record:hover{
+.record.active{
     transform:translateY(-220px);
 }
+
 
 .tab{
     background:#d8c7b0;
