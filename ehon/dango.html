@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ダンゴムシ　みつけたよ</title>
+
+<link rel="stylesheet" href="detail.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+<div class="page-header">
+
+    <h1>
+        絵本　よんでみた
+    </h1>
+
+    <p>
+        たくさんの絵本の中で 
+        たまたま読んでみて 
+        印象に残った絵本を紹介します
+    </p>
+
+</div>
+
+
+    <h1 class="book-title">
+        ダンゴムシ　みつけたよ
+    </h1>
+
+
+
+    <div class="book-info">
+
+        <div class="book-cover">
+
+            <img src="images/dango.jpg">
+
+        </div>
+
+
+
+        <div class="book-data">
+
+            <div class="data-row">
+                <span>作者</span>
+                皆越ようせい
+            </div>
+
+            <div class="data-row">
+                <span>写真</span>
+                皆越ようせい
+            </div>
+
+            <div class="data-row">
+                <span>訳</span>
+                -
+            </div>
+
+            <div class="data-row">
+                <span>原作国</span>
+                日本
+            </div>
+
+            <div class="data-row">
+                <span>出版社</span>
+                ポプラ社
+            </div>
+
+            <div class="data-row">
+                <span>出版年</span>
+                2015年
+            </div>
+
+            <div class="data-row">
+                <span>大きさ</span>
+                縦21cm、横29cm、厚み1cm            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-box">
+
+        <div class="story-title">
+            あらすじ
+        </div>
+
+        <p>
+            植木鉢の下などにいる普段よく見かける触れるところっと丸くなる
+            ダンゴムシの写真絵本です。
+            ダンゴムシの生態や成長の様子が拡大写真で分かりやすく解説されています。
+        </p>
+
+    </div>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            ひとこと
+        </div>
+
+        <p>
+            身近にいるダンゴムシにもかかわらず細かいことは知らないことが多い
+            のではないでしょうか。
+            小さくてよくわからない生態も拡大写真でリアルにみることができます。
+            特に丸くなる部分は鎧のような構造が大変よくわかります。虫が嫌いな
+            子供たちもひょっとしたら虫に興味を持つきっかけになるかもしれません。
+        </p>
+
+    </div>
+
+
+
+
+
+
+    <div class="shop-link">
+
+        <a
+            href="https://www.amazon.co.jp/dp/4591072983"
+            target="_blank">
+
+            絵本を探す
+
+        </a>
+
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="../index.html">
+            ← TOPページへ戻る
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>

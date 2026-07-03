@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>みずいろのマフラー</title>
+
+<link rel="stylesheet" href="detail.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+<div class="page-header">
+
+    <h1>
+        絵本　よんでみた
+    </h1>
+
+    <p>
+        たくさんの絵本の中で 
+        たまたま読んでみて 
+        印象に残った絵本を紹介します
+    </p>
+
+</div>
+
+
+    <h1 class="book-title">
+        みずいろのマフラー
+    </h1>
+
+
+
+    <div class="book-info">
+
+        <div class="book-cover">
+
+            <img src="images/mizuiro.jpg">
+
+        </div>
+
+
+
+        <div class="book-data">
+
+            <div class="data-row">
+                <span>作者</span>
+                くすのきしげのり
+            </div>
+
+            <div class="data-row">
+                <span>絵</span>
+                松成真理子
+            </div>
+
+            <div class="data-row">
+                <span>訳</span>
+                -
+            </div>
+
+            <div class="data-row">
+                <span>原作国</span>
+                日本
+            </div>
+
+            <div class="data-row">
+                <span>出版社</span>
+                童心社
+            </div>
+
+            <div class="data-row">
+                <span>出版年</span>
+                2011年
+            </div>
+
+            <div class="data-row">
+                <span>大きさ</span>
+                縦27cm、横19cm、厚み1cm            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-box">
+
+        <div class="story-title">
+            あらすじ
+        </div>
+
+        <p>
+            転校生のヨースケは僕らの言うことは何でも言うとおりにした。
+            ある日いつものように僕らのランドセルを持たせていたら。
+            偶然ヨースケのおかあさんにあった。
+            おかあさんは「ヨースケはあなたたちを友達と言っているのよ」と怒られた。
+            それからヨースケとはいつものように遊べなくなった。
+            急に引っ越しが決まったヨースケに会いに行くと…。
+        </p>
+
+    </div>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            ひとこと
+        </div>
+
+        <p>
+            子供のころにはいじめるわけでもなくやってしまうことはあるものです。
+            子供たちはそういうことの積み重ねで成長していくところもあるのでは
+            ないでしょうか。
+            ヨースケと僕ら（二人）の立場を通じて友達とは何だろうと考えさせられます。
+            また、おかあさんの子供への思いもしっかりと感じさせられる作品です。
+            現在、販売されていませんが再販売が期待される絵本です。
+        </p>
+
+    </div>
+
+
+
+
+
+
+    <div class="shop-link">
+
+        <a
+            href="https://www.amazon.co.jp/dp/4494004588"
+            target="_blank">
+
+            絵本を探す
+
+        </a>
+
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="../index.html">
+            ← TOPページへ戻る
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
