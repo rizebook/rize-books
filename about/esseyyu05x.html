@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>音楽ひとりごと<br>レコード・CD・サブスク時代を通して感じる音楽業界の変化</title>
+
+<link rel="stylesheet" href="about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+    <h1 class="song-title">
+        音楽ひとりごと
+    </h1>
+
+    <p class="about-lead">
+レコード・CD・サブスク時代を通して感じる音楽業界の変化<br>
+        　
+        長く愛される曲について思うことを
+        まとめてみました。
+
+
+    </p>
+
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            音楽業界は縮小してる？
+        </div>
+
+        <p>
+            本当のところはよくわかりませんが音楽業界全体が縮小、後退しているのではないかということ。
+まず人材の減少が気になります。音楽全盛期を経験している人材が世代交代でどんどんいなくなっていませんか？また、同じようにアーティスト（歌手）の方々もそう感じます。若いころから継続して活躍してきた音楽の現場で働く方たちもそろそろ引退の時期が近付いているように感じます。音楽全盛期を知っている制作の中心メンバーの方たちも引退が始まっているのではないですか。現場にだんだんと活力がなくなってきていませんか？
+<br><br>
+            あと考えられるのがお金が回らなくなってきたのではないかということ。
+昔の歌手の皆さんの中には長者番付（納税者番付）に会社の社長さんたちに交じって顔を出す方がいらっしゃいました。年に数回の大ヒットを飛ばすと長者番付入りしたのです。最近は全く見たことがありません。音楽の配給会社も小さくなってしまっていませんか。レコードからCD、CDから配信になって売り上げ減っちゃってませんか？ちゃんとビジネスとして成り立っていますか？お金が回らなければいい仕事はできないですよね。
+
+
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-link">
+
+      <a href="../contact.html">
+
+       ご意見、お問い合わせ 
+
+      </a>
+    </div>
+
+
+  <div class="back-link">
+
+
+        <a href="esseytx06a.html">
+            → 音楽ひとりごと 「音楽の持続可能な制作システムはできないのか」に進む
+        </a>
+ 
+   </div>
+
+
+
+    <div class="back-link">
+
+        <a href="essey.html">
+            ← 音楽ひとりごと TOPページへ戻る
+        </a>
+
+    </div>
+
+
+    <div class="back-link">
+
+        <a href="music/index.html">
+            ← MUSIC TOPページへ戻る
+        </a>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
+

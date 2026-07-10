@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>音楽ひとりごと<br>レコード・CD・サブスク時代を通して感じる音楽業界の変化</title>
+
+<link rel="stylesheet" href="about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+    <h1 class="song-title">
+        音楽ひとりごと
+    </h1>
+
+    <p class="about-lead">
+レコード・CD・サブスク時代を通して感じる音楽業界の変化<br>
+        　
+        長く愛される曲について思うことを
+        まとめてみました。
+
+
+    </p>
+
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            音楽の聴き方の変化と楽曲の変化
+        </div>
+
+        <p>
+            音楽の聴き方も音楽を聴くメディアによって変化しているように感じます。
+レコードの時代にはレコードの溝に針を落としたら曲の途中では針をあげません。なぜなら針をあげたときにレコードに傷がついてしまうからです。アルバムだったら片面6曲くらいは続けて演奏していました。それがCD時代になると曲の途中で止めたり、全曲をランダムに入れ替えたり自由にできるようになりました。スピードも変えられましたが、まだ一般的ではありませんでした。これが配信の時代になると途中で止めることもスピードを速めて早く短く聴くことも簡単にできるようになりました。
+<br><br>
+            この聴き方の変化により楽曲にも変化が現れてきました、レコード時代には裏表だいたい12曲くらいがアルバムのテーマに沿って製作者の意向を反映してプロローグ、メイン、エピローグなどのように工夫されているものもありました。CD時代にもアルバムテーマはあったように思いますが聴く側はあまりそういうことを意識しなくなっていきました。そして配信時代になるとアルバムという概念が希薄になり好きな曲だけを楽しむ傾向になってきたように思います。また、タイパ（タイムパフォーマンス）重視の考え方からスピードを早めたり一部を聴いたりする聴き方が主流のような気がします。曲のイントロ部分がない曲が増えたのもこの傾向の表れのひとつではないでしょうか。ちょっと昔には曲のイントロ部分を短く流して曲を当てる「イントロ当てクイズ」があったけど今はできませんね。
+        </p>
+
+        </div>
+
+
+
+    <div class="contact-link">
+
+      <a href="../contact.html">
+
+       ご意見、お問い合わせ 
+
+      </a>
+    </div>
+
+
+  <div class="back-link">
+
+
+        <a href="esseyyu05x.html">
+            → 音楽ひとりごと 「音楽業界は縮小してる？」に進む
+        </a>
+ 
+   </div>
+
+
+
+    <div class="back-link">
+
+        <a href="essey.html">
+            ← 音楽ひとりごと TOPページへ戻る
+        </a>
+
+    </div>
+
+
+    <div class="back-link">
+
+        <a href="music/index.html">
+            ← MUSIC TOPページへ戻る
+        </a>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
+

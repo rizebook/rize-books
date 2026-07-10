@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>音楽ひとりごと<br>レコード・CD・サブスク時代を通して感じる音楽業界の変化</title>
+
+<link rel="stylesheet" href="about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+    <h1 class="song-title">
+        音楽ひとりごと
+    </h1>
+
+    <p class="about-lead">
+レコード・CD・サブスク時代を通して感じる音楽業界の変化<br>
+        　
+        長く愛される曲について思うことを
+        まとめてみました。
+
+
+    </p>
+
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            音楽の将来に向けて
+        </div>
+
+        <p>
+            音楽は沈んだ気持ちを明るくしたり、気分をあげて楽しくしたりする力があると思います。ぜひこの音楽の力が今後も引き継がれて拡大していくように業界全体で持続可能な音楽制作のシステムを作り上げていただきたいです。今の子供たちが将来大人になったときに想い出とともに思い出す大切な曲が少なくなってしまうのは悲しい事です。業界の枠を超えた活性化をよろしくお願いします。
+
+時代を超えて残る曲には共通する力があるように感じます。
+スローリスニングの復活
+人間らしい音楽の復活
+本物志向の音楽の復活
+これからもたくさんの名曲が生まれることを願っています。
+
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-link">
+
+      <a href="../contact.html">
+
+       ご意見、お問い合わせ 
+
+      </a>
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="essey.html">
+            ← 音楽ひとりごと TOPページへ戻る
+        </a>
+
+    </div>
+
+
+    <div class="back-link">
+
+        <a href="music/index.html">
+            ← MUSIC TOPページへ戻る
+        </a>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
+
