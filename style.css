@@ -21,6 +21,46 @@
     margin:0 auto;
     text-align:center;
 }
+
+.news-box{
+    width:900px;
+    max-width:95%;
+
+    margin:20px auto 40px;
+
+    background:rgba(255,255,255,0.72);
+
+    border:1px solid rgba(0,0,0,0.08);
+
+    border-radius:10px;
+
+    padding:14px 20px;
+
+    box-sizing:border-box;
+
+    backdrop-filter:blur(4px);
+
+    color:#2c2621;
+}
+
+.news-title{
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+
+    border-bottom:1px solid rgba(0,0,0,0.15);
+
+    padding-bottom:8px;
+}
+
+.news-content{
+    line-height:1.8;
+
+    font-size:13px;
+}
+
 /* 本棚 */
 
 .bookshelf{
