@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>りんごかもしれない</title>
+
+<link rel="stylesheet" href="detail.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+<div class="page-header">
+
+    <h1>
+        絵本　よんでみた
+    </h1>
+
+    <p>
+        たくさんの絵本の中で 
+        たまたま読んでみて 
+        印象に残った絵本を紹介します
+    </p>
+
+</div>
+
+
+    <h1 class="book-title">
+        りんごかもしれない
+    </h1>
+
+
+
+    <div class="book-info">
+
+        <div class="book-cover">
+
+            <img src="images/ringo.jpg">
+
+        </div>
+
+
+
+        <div class="book-data">
+
+            <div class="data-row">
+                <span>作者</span>
+                ヨシタケシンスケ
+            </div>
+
+            <div class="data-row">
+                <span>絵</span>
+                ヨシタケシンスケ            </div>
+
+            <div class="data-row">
+                <span>訳</span>
+                -
+            </div>
+
+            <div class="data-row">
+                <span>原作国</span>
+                日本
+            </div>
+
+            <div class="data-row">
+                <span>出版社</span>
+                ブロンズ新社
+            </div>
+
+            <div class="data-row">
+                <span>出版年</span>
+                2013年
+            </div>
+
+            <div class="data-row">
+                <span>大きさ</span>
+                縦26cm、横21cm、厚み1cm            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-box">
+
+        <div class="story-title">
+            あらすじ
+        </div>
+
+        <p>
+            ある日テーブルの上にひとつのりんごがあった。ひとつのりんごからいろいろな妄想を繰り広げていく、「かもしれない」「かもしれない」とどんどんと勝手な妄想が限りなく広がっていく物語。表情の変化や絵も面白くアイデアいっぱいなので、楽しく読み進められます。
+        </p>
+
+    </div>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            ひとこと
+        </div>
+
+        <p>
+            ささいなことにも興味を持つのもいいかもしれない。<br>
+            ひとつのことから様々なことを考えるのも良い事かもかもしれない。<br>
+            決まった考えから離れてみるのもいいかもしれない。<br>
+            想像が大きく広がるのも楽しいかもしれない。<br>
+            子供たちにしかわからない世界があるのかもしれない。<br>
+            絵の表情を見ているだけでも面白いのかもしれない。<br>
+            絵本をよんでみるともっと面白いかもしれない。<br>
+
+        </p>
+
+    </div>
+
+
+
+
+
+
+    <div class="shop-link">
+
+        <a
+            href="https://www.amazon.co.jp/dp/4893095625"
+            target="_blank">
+
+            絵本を探す
+
+        </a>
+
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="../">
+            ← TOPページへ戻る
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
