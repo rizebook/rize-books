@@ -19,7 +19,7 @@ content="ライツ書房は絵本・音楽を紹介する個人サイトです�
     <h1>ライツ書房の絵本の本棚</h1>
     <p>時を超えて価値ある古書をお届けするライツ書房が選んだ絵本たちです。</p>
    <p>たまには子供のころに帰って絵本でものぞいてみませんか、すごく面白いですよ。</p>
-   <p>「たかちゃんのお気に入り」からはお気に入りの音楽も紹介しています。</p>
+   <p>「たかじいのお気に入り」からはお気に入りの音楽も紹介しています。</p>
 
   </header>
 
@@ -32,6 +32,9 @@ content="ライツ書房は絵本・音楽を紹介する個人サイトです�
     <div class="news-content">
         
     <div>2026.07.01　サイト公開</div>
+    <div>2026.07.15　絵本に「二十一世紀に生きる君たちへ」を追加しました</div>
+    <div>2026.07.15　音楽ページに「恋するフォーチュンクッキー　AKB48」を追加しました</div>
+
 
     </div>
 </div>
@@ -85,11 +88,11 @@ const titles = [
 "ダンゴムシ<br>　みつけたよ",
 "準備中",
 "みずいろの<br>　マフラー",
+"二十一世紀に<br>　生きる君たちへ",
 "準備中",
 "準備中",
 "準備中",
-"準備中",
-"たかちゃんの<br>　お気に入り"
+"たかじいの<br>　お気に入り"
 ];
 
 
@@ -109,6 +112,7 @@ links[27] = "ehon/bamkero.html"
 links[31] = "ehon/tennyo.html"
 links[33] = "ehon/dango.html"
 links[35] = "ehon/mizuiro.html"
+links[36] = "ehon/21seiki.html"
 links[40] = "music/index.html"
 
 ;
@@ -167,7 +171,7 @@ const books =  [
 ];
 
 while(titles.length < books.length){
-    titles.push("ライツ書房");
+    titles.push("ライツ書房の絵本の本棚");
 }
 
 books.forEach((b,i)=>{
