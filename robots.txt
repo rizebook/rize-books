@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://rizebook.github.io/rize-books/sitemap.xml

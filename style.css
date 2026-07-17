@@ -509,3 +509,27 @@ button{
     }
 
 }
+
+.recommend{
+    max-width:950px;
+    margin:60px auto;
+    padding:25px;
+    background:rgba(255,255,255,0.55);
+    border-radius:10px;
+}
+
+.recommend h2{
+    color:#2a241f;
+    margin-top:0;
+}
+
+.recommend ul{
+    padding-left:20px;
+    line-height:2;
+}
+
+.recommend a{
+    color:#2a241f;
+    text-decoration:none;
+    border-bottom:1px solid rgba(0,0,0,0.3);
+}
