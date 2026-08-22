@@ -47,9 +47,15 @@ content="ライツ書房は絵本・音楽を紹介する個人サイトです�
 </div>
 
 
-<div class="bookshelf">
+<div class="bookshelf-area">
 
-<img src="bookshelf.png" class="shelf">
+    <button id="enlarge-bookshelf">
+        🔍 本棚を大きく見る
+    </button>
+
+    <div class="bookshelf">
+
+        <img src="bookshelf.png" class="shelf">
 
 <!-- 本（自動生成） -->
 <script>
@@ -189,7 +195,7 @@ books.forEach((b,i)=>{
 
   const title = titles[i];
 
-  el.style.left   = b[0] + "%";
+  el.style.left   = (b[0] + 0.2) + "%";
   el.style.bottom = b[1] + "%";
   el.style.width  = b[2] + "%";
   el.style.height = b[3] + "%";
@@ -230,6 +236,8 @@ el.addEventListener("mouseleave", () => {
     container.appendChild(el);
 });
 </script>
+
+    </div>
 
 </div>
 
@@ -373,6 +381,430 @@ button.onclick = () => {
 
 <script data-goatcounter="https://rizebooks.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<style>
+
+/* =========================================
+   本棚を大きく見る
+========================================= */
+
+#enlarge-bookshelf{
+    display:block;
+
+    margin:20px auto;
+
+    padding:10px 22px;
+
+    background:rgba(255,255,255,0.78);
+
+    color:#2a241f;
+
+    border:1px solid rgba(0,0,0,0.15);
+
+    border-radius:30px;
+
+    font-family:'Noto Serif JP', serif;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.12);
+
+    backdrop-filter:blur(4px);
+}
+
+
+/* 拡大表示中 */
+
+.bookshelf-viewer{
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    background:#f5f1ea;
+
+    z-index:10000;
+
+    overflow:hidden;
+
+    touch-action:none;
+}
+
+
+/* =========================================
+   拡大表示用の本棚
+========================================= */
+
+.bookshelf-viewer .bookshelf{
+    position:absolute;
+
+    width:100%;
+
+    max-width:none;
+
+    transform:scale(2.5);
+
+    transform-origin:top left;
+
+    margin:0;
+
+    cursor:grab;
+
+    user-select:none;
+}
+
+.bookshelf-viewer .bookshelf.dragging{
+    cursor:grabbing;
+}
+
+
+/* 本棚画像 */
+
+.bookshelf-viewer .shelf{
+    width:100%;
+
+    max-width:none;
+
+    display:block;
+}/* 閉じるボタン */
+
+#close-bookshelf{
+    position:fixed;
+
+    top:15px;
+    right:15px;
+
+    z-index:10002;
+
+    padding:9px 16px;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    border:none;
+
+    border-radius:30px;
+
+    color:#2a241f;
+
+    font-family:
+        'Noto Serif JP',
+        serif;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.2);
+}
+
+
+/* 拡大画面の案内 */
+
+.bookshelf-guide{
+    position:fixed;
+
+    left:50%;
+    bottom:15px;
+
+    transform:translateX(-50%);
+
+    z-index:10002;
+
+    padding:7px 14px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    color:#2a241f;
+
+    pointer-events:none;
+}
+
+
+/* PCでも大きく見る機能を使えるようにする */
+
+@media(min-width:769px){
+
+    #enlarge-bookshelf{
+        display:none;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================================
+   本棚を大きく見る
+========================================= */
+
+const enlargeButton =
+    document.getElementById("enlarge-bookshelf");
+
+const originalBookshelf =
+    document.querySelector(".bookshelf");
+
+
+enlargeButton.addEventListener("click", () => {
+
+    /* 拡大表示用の画面を作る */
+
+    const viewer =
+        document.createElement("div");
+
+    viewer.className =
+        "bookshelf-viewer";
+
+
+    /* 閉じるボタン */
+
+    const closeButton =
+        document.createElement("button");
+
+    closeButton.id =
+        "close-bookshelf";
+
+    closeButton.textContent =
+        "× 閉じる";
+
+
+    /* 説明 */
+
+    const guide =
+        document.createElement("div");
+
+    guide.className =
+        "bookshelf-guide";
+
+    guide.textContent =
+        "指やマウスで本棚を動かせます";
+
+
+    /* 本棚を複製 */
+
+const bookshelf =
+    originalBookshelf.cloneNode(true);
+
+bookshelf.classList.add("large-bookshelf");
+
+    viewer.appendChild(bookshelf);
+
+    viewer.appendChild(closeButton);
+
+    viewer.appendChild(guide);
+
+    document.body.appendChild(viewer);
+
+
+/* =====================================
+   本棚の移動
+   ドラッグ中はリンクを開かない
+===================================== */
+
+let x = 0;
+let y = 0;
+
+let startX = 0;
+let startY = 0;
+
+let dragging = false;
+let moved = false;
+
+
+/* -------------------------------------
+   移動開始
+------------------------------------- */
+
+const moveStart = (clientX, clientY) => {
+
+    dragging = true;
+    moved = false;
+
+    startX = clientX - x;
+    startY = clientY - y;
+
+    bookshelf.classList.add("dragging");
+};
+
+
+/* -------------------------------------
+   移動
+------------------------------------- */
+
+const move = (clientX, clientY) => {
+
+    if(!dragging) return;
+
+    const newX = clientX - startX;
+    const newY = clientY - startY;
+
+    /* 一定距離以上動いたら「ドラッグ」と判定 */
+
+    if(
+        Math.abs(newX - x) > 5 ||
+        Math.abs(newY - y) > 5
+    ){
+        moved = true;
+    }
+
+    x = newX;
+    y = newY;
+
+    bookshelf.style.left = x + "px";
+    bookshelf.style.top = y + "px";
+};
+
+
+/* -------------------------------------
+   移動終了
+------------------------------------- */
+
+const moveEnd = () => {
+
+    dragging = false;
+
+    bookshelf.classList.remove("dragging");
+
+};
+
+
+/* =====================================
+   マウス
+===================================== */
+
+bookshelf.addEventListener(
+    "mousedown",
+    e => {
+
+        moveStart(
+            e.clientX,
+            e.clientY
+        );
+
+        e.preventDefault();
+
+    }
+);
+
+
+document.addEventListener(
+    "mousemove",
+    e => {
+
+        move(
+            e.clientX,
+            e.clientY
+        );
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseup",
+    e => {
+
+        moveEnd();
+
+    }
+);
+
+
+/* =====================================
+   ドラッグ後のリンク移動を防止
+===================================== */
+
+bookshelf.addEventListener(
+    "click",
+    e => {
+
+        if(moved){
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            moved = false;
+        }
+
+    },
+    true
+);
+
+
+/* =====================================
+   スマホ
+===================================== */
+
+bookshelf.addEventListener(
+    "touchstart",
+    e => {
+
+        const touch = e.touches[0];
+
+        moveStart(
+            touch.clientX,
+            touch.clientY
+        );
+
+    },
+    {passive:false}
+);
+
+
+document.addEventListener(
+    "touchmove",
+    e => {
+
+        if(!dragging) return;
+
+        const touch = e.touches[0];
+
+        move(
+            touch.clientX,
+            touch.clientY
+        );
+
+        e.preventDefault();
+
+    },
+    {passive:false}
+);
+
+
+document.addEventListener(
+    "touchend",
+    e => {
+
+        moveEnd();
+
+    }
+);
+
+    /* =====================================
+       本棚を閉じる
+    ===================================== */
+
+    closeButton.addEventListener(
+        "click",
+        () => {
+
+            viewer.remove();
+
+        }
+    );
+
+});
+
+</script>
 
 </body>
 </html>
