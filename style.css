@@ -654,21 +654,15 @@ button:hover{
 @media(max-width:768px){
 
     .spine{
-        font-size:8px;
+        font-size:3.5px;
     }
 
     .title{
-        font-size:3.5px;
+        font-size:3.5px !important;
         letter-spacing:-1px;
-
         line-height:1.1;
 
-        white-space:normal;
-
-        display:block;
-
-        max-height:100%;
-        overflow:hidden;
+        white-space:nowrap;
     }
 
 }
