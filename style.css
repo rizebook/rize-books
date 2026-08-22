@@ -652,16 +652,23 @@ button:hover{
 }
 
 @media(max-width:768px){
+
     .spine{
         font-size:8px;
-        overflow:hidden;
     }
 
     .title{
-        font-size:3.5px !important;
+        font-size:3.5px;
         letter-spacing:-1px;
-        line-height:1;
-        white-space:nowrap;
-        max-height:90%;
+
+        line-height:1.1;
+
+        white-space:normal;
+
+        display:block;
+
+        max-height:100%;
+        overflow:hidden;
     }
+
 }
