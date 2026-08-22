@@ -595,8 +595,8 @@ button:hover{
     }
 
     .title{
-        font-size:2.5px;
-        letter-spacing:0;
+        font-size:2.5px!important;
+        letter-spacing:0!important;
 
         position:relative;
         left:-1px;
