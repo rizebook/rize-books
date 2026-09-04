@@ -279,5 +279,54 @@ blockquote{
 
         font-size:12px;
     }
+
+    .music-title{
+        font-size:18px;
+        letter-spacing:2px;
+    }
+
+    .top-back-link a{
+        font-size:13px;
+    }
 }
 
+
+.music-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.music-title{
+    font-size:28px;
+    text-align:center;
+    letter-spacing:3px;
+    margin-bottom:15px;
+    color:#2a241f;
+}
+
+.top-back-link{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.top-back-link a{
+    color:#5a4638;
+    text-decoration:none;
+    font-size:14px;
+    border-bottom:1px solid rgba(90,70,56,0.35);
+    padding-bottom:3px;
+}
+
+
+@media(max-width:768px){
+
+    .music-title{
+        font-size:18px;
+        letter-spacing:2px;
+    }
+
+    .top-back-link a{
+        font-size:13px;
+    }
+
+}
