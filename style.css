@@ -184,6 +184,40 @@ body::before{
         inset 0 0 8px rgba(0,0,0,0.6);
 }
 
+/* =========================================
+   40番　音楽お気に入り・レコード風
+========================================= */
+
+.book.music-record{
+    width:7%;
+    height:34%;
+
+    z-index:20;
+}
+
+.book.music-record .inner{
+    position:relative;
+}
+
+.book.music-record .inner::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:url("images/music_record_jacket.png");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    pointer-events:none;
+}
+
 
 /* =========================================
    背表紙タイトル
@@ -833,6 +867,144 @@ button:hover{
 
     #enlarge-bookshelf{
         display:none;
+    }
+
+}
+
+
+/* =========================================
+   たかじいの音楽お気に入り
+   シンプルな二重枠プレート
+========================================= */
+
+.music-link-banner{
+    position:relative;
+
+    display:flex;
+
+    width:80%;
+    max-width:800px;
+
+    margin:30px auto 45px;
+    padding:18px 35px;
+
+    box-sizing:border-box;
+
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+
+    color:#3a2a1f;
+    text-decoration:none;
+
+    background:rgba(250,247,238,0.94);
+
+    /* 外側の枠 */
+    border:1px solid rgba(110,80,50,0.55);
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.12);
+
+    font-family:'Noto Serif JP', serif;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* 内側の二重枠 */
+
+.music-link-banner::before{
+    content:"";
+
+    position:absolute;
+
+    top:5px;
+    left:6px;
+    right:6px;
+    bottom:5px;
+
+    border:1px solid rgba(138,104,72,0.45);
+
+    pointer-events:none;
+}
+
+
+/* -----------------------------------------
+   タイトル
+----------------------------------------- */
+
+.music-link-title{
+    font-size:22px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    white-space:nowrap;
+}
+
+
+/* -----------------------------------------
+   説明
+----------------------------------------- */
+
+.music-link-sub{
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    white-space:nowrap;
+}
+
+
+/* -----------------------------------------
+   マウスを乗せたとき
+----------------------------------------- */
+
+.music-link-banner:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================
+   スマートフォン
+========================================= */
+
+@media(max-width:768px){
+
+    .music-link-banner{
+        width:92%;
+
+        max-width:none;
+
+        margin:30px auto 40px;
+
+        padding:15px 20px;
+
+        flex-direction:column;
+
+        gap:7px;
+    }
+
+
+    .music-link-title{
+        font-size:17px;
+
+        letter-spacing:1px;
+    }
+
+
+    .music-link-sub{
+        font-size:11px;
+
+        letter-spacing:0.5px;
+
+        white-space:normal;
     }
 
 }

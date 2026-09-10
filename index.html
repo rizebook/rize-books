@@ -192,15 +192,21 @@ while(titles.length < books.length){
 
 books.forEach((b,i)=>{
   const el = document.createElement("div");
-  el.className = "book";
 
-  const title = titles[i];
+el.className = "book";
 
-  el.style.left   = (b[0] + 0.2) + "%";
-  el.style.bottom = b[1] + "%";
-  el.style.width  = b[2] + "%";
-  el.style.height = b[3] + "%";
 
+const title = titles[i];
+
+el.style.left   = (b[0] + 0.2) + "%";
+el.style.bottom = b[1] + "%";
+el.style.width  = b[2] + "%";
+el.style.height = b[3] + "%";
+
+if(i === 40){
+    el.style.width = "7.8%";
+    el.style.height = "24.3%";
+}
 el.innerHTML = ` 
   <a href="${links[i] || '#'}">
  
@@ -213,6 +219,12 @@ el.innerHTML = `
  </div> 
 </a> 
 `;
+
+
+
+
+
+
 
 let timer;
 
@@ -234,13 +246,25 @@ el.addEventListener("mouseleave", () => {
 
 });
 
+    if(i === 40){
+        el.classList.add("music-record");
+    }
+
     container.appendChild(el);
 });
+
 </script>
 
-    </div>
+</div>
+
 
 </div>
+
+<a href="music/index.html" class="music-link-banner">
+    <span class="music-link-title">♪　たかじいの音楽お気に入り</span>
+    <span class="music-link-sub">｜　懐かしい音楽を、レコード棚からどうぞ。　→</span>
+</a>
+
 
 <section class="recommend">
 
