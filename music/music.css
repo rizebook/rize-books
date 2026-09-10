@@ -50,25 +50,24 @@ body::before{
 
     height:620px;
 
-    border:6px solid #3b3027;
+    border:6px solid #2f211c;
 
     border-radius:10px;
 
     background:
     repeating-linear-gradient(
         0deg,
-        #6a533f 0px,
-        #6a533f 4px,
-        #3f3127 5px,
-        #7a6049 7px,
-        #4a3d32 10px
+        #55372c 0px,
+        #55372c 4px,
+        #33231e 5px,
+        #674438 7px,
+        #402b23 10px
     );
 
     padding:20px;
 
     overflow:visible;
 }
-
 .records-window{
     position:relative;
 
@@ -378,6 +377,133 @@ body::before{
     .music-header h1{
         font-size:24px;
         letter-spacing:2px;
+    }
+
+}
+
+/* =========================================
+   たかじいの音楽ひとりごと
+   二重枠プレート
+========================================= */
+
+.essey-link{
+    position:relative;
+
+    width:80%;
+    max-width:800px;
+
+    margin:30px auto 40px;
+    padding:18px 35px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    background:rgba(250,247,238,0.94);
+
+    border:1px solid rgba(110,80,50,0.55);
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.12);
+
+    font-family:'Noto Serif JP', serif;
+}
+
+
+/* 内側の二重枠 */
+
+.essey-link::before{
+    content:"";
+
+    position:absolute;
+
+    top:5px;
+    left:6px;
+    right:6px;
+    bottom:5px;
+
+    border:1px solid rgba(138,104,72,0.45);
+
+    pointer-events:none;
+}
+
+
+/* リンク */
+
+.essey-link a{
+    position:relative;
+    z-index:1;
+    display:block;
+    color:#3a2a1f;
+    text-decoration:none;
+    border-bottom:none;
+}
+
+/* タイトル */
+
+.essay-link-title{
+    display:block;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+}
+
+
+/* 説明 */
+
+.essay-link-sub{
+    display:block;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* マウスを乗せたとき */
+
+.essey-link:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================
+   スマートフォン
+========================================= */
+
+@media(max-width:768px){
+
+    .essey-link{
+        width:92%;
+
+        max-width:none;
+
+        margin:30px auto 35px;
+
+        padding:15px 20px;
+    }
+
+
+    .essay-link-title{
+        font-size:17px;
+
+        letter-spacing:1px;
+
+        margin-bottom:6px;
+    }
+
+
+    .essay-link-sub{
+        font-size:11px;
+
+        letter-spacing:0.5px;
+
+        line-height:1.8;
     }
 
 }
