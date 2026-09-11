@@ -68,6 +68,7 @@ body::before{
 
     overflow:visible;
 }
+
 .records-window{
     position:relative;
 
@@ -75,18 +76,13 @@ body::before{
 
     overflow:hidden;
 
-
     padding-top:220px;
     margin-top:-220px;
-
 
     display:flex;
     flex-direction:column;
     align-items:center;
-
- 
 }
-
 
 .divider{
     background:#c7b299;
@@ -156,7 +152,7 @@ body::before{
 }
 
 .cover{
-    background:#5b4b3e;
+    background:#55372c;
 
     width:100%;
 
