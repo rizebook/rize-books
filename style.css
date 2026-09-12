@@ -375,26 +375,28 @@ main{
 ========================================= */
 
 .recommend{
-    max-width:950px;
+    max-width:850px;
 
-    margin:60px auto;
+    margin:40px auto;
 
-    padding:25px;
+    padding:18px;
 
     background:
         rgba(255,255,255,0.55);
 
-    border-radius:10px;
+    border-radius:8px;
 }
 
 .recommend h2{
     color:#2a241f;
     margin-top:0;
+    font-size:21px;
 }
 
 .recommend ul{
-    padding-left:20px;
-    line-height:2;
+    padding-left:18px;
+    line-height:1.8;
+    font-size:13px;
 }
 
 .recommend a{
@@ -406,7 +408,6 @@ main{
         1px solid
         rgba(0,0,0,0.3);
 }
-
 
 /* =========================================
    問い合わせ
@@ -649,28 +650,27 @@ button:hover{
        おすすめ
     ------------------------------------- */
 
-    .recommend{
-        width:95%;
+.recommend{
+    width:92%;
 
-        margin:
-            40px auto;
+    margin:
+        30px auto;
 
-        padding:18px;
-    }
+    padding:14px;
+}
 
-    .recommend h2{
-        font-size:20px;
-        line-height:1.6;
-    }
+.recommend h2{
+    font-size:18px;
+    line-height:1.5;
+}
 
-    .recommend ul{
-        padding-left:20px;
+.recommend ul{
+    padding-left:18px;
 
-        font-size:13px;
+    font-size:12px;
 
-        line-height:2;
-    }
-
+    line-height:1.8;
+}
 
     /* -------------------------------------
        フッター
