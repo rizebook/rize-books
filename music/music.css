@@ -30,16 +30,10 @@ body::before{
 
 .music-grid{
     width:100%;
-
     margin:40px auto;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3, 400px);
-
+    grid-template-columns:repeat(3, 400px);
     justify-content:center;
-
     gap:15px;
 }
 
@@ -231,6 +225,7 @@ body::before{
 
 
 .news-box{
+
     width:900px;
 
     margin:
@@ -253,6 +248,8 @@ body::before{
     backdrop-filter:blur(4px);
 
     color:#2c2621;
+
+
 }
 
 .news-title{
@@ -274,9 +271,6 @@ body::before{
 
     font-size:13px;
 }
-
-
-
 .music-footer{
     text-align:center;
 
@@ -503,3 +497,4 @@ body::before{
     }
 
 }
+
