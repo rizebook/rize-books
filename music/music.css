@@ -498,3 +498,12 @@ body::before{
 
 }
 
+.news-click-overlay{
+    position:fixed;
+    z-index:99999;
+    display:block;
+    background:transparent;
+    color:transparent;
+    text-decoration:none;
+    pointer-events:auto;
+}

@@ -322,35 +322,89 @@ href="time.html"><div class="cover"> <img src="images/time.jpg"></div></a>
 
 
 <script>
-
 document.querySelectorAll(".record").forEach(record => {
-
     let timer;
 
     record.addEventListener("mouseenter", () => {
-
         timer = setTimeout(() => {
-
             record.classList.add("active");
-
         }, 800);
-
     });
 
     record.addEventListener("mouseleave", () => {
-
         clearTimeout(timer);
-
         record.classList.remove("active");
-
     });
-
 });
 
 
+// ニュースリンク用の透明なクリック領域を作る
+const newsLinks = document.querySelectorAll(".news-content a");
+
+newsLinks.forEach(link => {
+
+    const overlay = document.createElement("a");
+
+    overlay.href = link.href;
+    overlay.className = "news-click-overlay";
+
+    document.body.appendChild(overlay);
+
+
+    function updateOverlay() {
+
+        const rect = link.getBoundingClientRect();
+
+        overlay.style.left = rect.left + "px";
+        overlay.style.top = rect.top + "px";
+        overlay.style.width = rect.width + "px";
+        overlay.style.height = rect.height + "px";
+
+
+        // レコードがこのリンクの上に出ているか確認
+        let activeRecordOverLink = false;
+
+        document.querySelectorAll(".record.active").forEach(record => {
+
+            const recordRect = record.getBoundingClientRect();
+
+            const overlap =
+                recordRect.left < rect.right &&
+                recordRect.right > rect.left &&
+                recordRect.top < rect.bottom &&
+                recordRect.bottom > rect.top;
+
+            if (overlap) {
+                activeRecordOverLink = true;
+            }
+        });
+
+
+        // レコードが下がっている時だけクリックできる
+        if (activeRecordOverLink) {
+            overlay.style.pointerEvents = "none";
+        } else {
+            overlay.style.pointerEvents = "auto";
+        }
+    }
+
+
+    updateOverlay();
+
+    window.addEventListener("scroll", updateOverlay);
+    window.addEventListener("resize", updateOverlay);
+
+
+    // レコードが上がった・下がった時にも判定を更新
+    const observer = new MutationObserver(updateOverlay);
+
+    observer.observe(document.body, {
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["class"]
+    });
+});
 </script>
-
-
 
 
 </body>
