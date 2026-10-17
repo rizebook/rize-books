@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ふくびき｜絵本　あらすじと紹介｜ライツ書房</title>
+
+<link rel="stylesheet" href="detail.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+<meta name="description"
+      content="くすのきしげのり・狩野富貴子作『ふくびき』の紹介ページです。
+      あらすじや感想を、ライツ書房店主の視点で紹介しています。">
+
+<link rel="canonical" href="https://rizebook.github.io/rize-books/ehon/fukubiki.html">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+<div class="page-header">
+
+    <h1>
+        絵本　よんでみた
+    </h1>
+
+    <p>
+        たくさんの絵本の中で 
+        たまたま読んでみて 
+        印象に残った絵本を紹介します
+    </p>
+
+</div>
+
+
+<div class="top-back-link">
+        <a href="https://rizebook.github.io/rize-books/">
+        ← ライツ書房の絵本の本棚へ戻る</a>
+</div>
+<br>
+
+
+    <h1 class="book-title">
+        ふくびき
+    </h1>
+
+
+
+    <div class="book-info">
+
+        <div class="book-cover">
+
+            <img src="images/fukubiki.jpg">
+
+        </div>
+
+
+
+        <div class="book-data">
+
+            <div class="data-row">
+                <span>作者</span>
+                くすのき　しげのり
+            </div>
+
+            <div class="data-row">
+                <span>絵</span>
+                狩野富貴子
+            </div>
+
+            <div class="data-row">
+                <span>訳</span>
+                -
+            </div>
+
+            <div class="data-row">
+                <span>原作国</span>
+                日本
+            </div>
+
+            <div class="data-row">
+                <span>出版社</span>
+                小学館
+            </div>
+
+            <div class="data-row">
+                <span>出版年</span>
+                2010年
+            </div>
+
+            <div class="data-row">
+                <span>大きさ</span>
+                縦21cm、横23cm、厚み1cm            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-box">
+
+        <div class="story-title">
+            あらすじ
+        </div>
+
+        <p>
+            幼い姉弟は、お母ちゃんに内緒でクリスマスプレゼントを贈ろうと、
+            バッグを買いに商店街へ出かけます。<br>
+            でもおこづかいの80円ではお目当てのバッグは買えません。<br>
+            そこでお母さんと買い物に行った時にもらった福引券を思い出しました。<br>
+            ところが、それは補助券で福引をすることはできませんでした。<br>
+            がっかりして帰ろうとする姉弟。その時・・・。
+            
+        </p>
+
+    </div>
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            ひとこと
+        </div>
+
+        <p>
+            年末の商店街の福引所で繰り広げられる、小さなドラマです。<br>
+            お母さんを思う姉弟の気持ち、そんな姉弟をやさしく見守る大人たちの気持ちが
+            見事に表現されています。<br>
+            登場人物たちの「やさしい気持ち」「正直な気持ち」「思いやる気持ち」
+           「親切な気持ち」<br>
+            師走のあわだたしさの中で、そんな気持ちが人から人へとつながり、
+            読んでいる私たちの心までほっこりと温めてくれる作品です。<br>
+            狩野さんのやさしくソフトな絵も、物語の温かさをいっそう引き立てています。
+        </p>
+
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+    <div class="shop-link">
+
+        <a
+            href="https://www.amazon.co.jp/dp/4097264346"
+            target="_blank">
+
+            この絵本をAmazonで購入する
+
+        </a>
+
+    </div>
+
+
+
+    <div class="back-link">
+
+        <a href="https://rizebook.github.io/rize-books/">
+            ← ライツ書房の絵本の本棚へ戻る
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
