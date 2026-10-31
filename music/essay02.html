@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>たかじいの音楽ひとりごと｜サブスク時代を超えて愛される楽曲とその未来について</title>
+
+<link rel="stylesheet" href="about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap"
+      rel="stylesheet">
+
+<meta name="description"
+      content="サブスク時代を超えて愛される楽曲とその未来について、一音楽ファンの視点から考察したコラムです。">
+
+<link rel="canonical" href="https://rizebook.github.io/rize-books/music/essay02.html">
+
+</head>
+
+<body>
+
+<div class="detail-page">
+
+
+    <h1 class="song-title">
+        たかじいの音楽ひとりごと
+    </h1>
+
+    <p class="about-lead">
+        レコード・CD・サブスク時代を通して感じる音楽業界の変化<br>
+        サブスク時代を超えて愛される楽曲とその未来について、
+        思うことをまとめてみました。
+
+
+    </p>
+
+    <div class="top-back-link">
+        <a href="index.html">← レコード棚に戻る</a>
+    </div>
+
+
+
+    <div class="comment-box">
+
+        <div class="comment-title">
+            購入方法の変化
+         </div>
+       
+
+<p>
+
+    音楽を購入するときの方法が、この40年くらいで大きく変化してきました。
+    レコード、CDなどのメディアを購入する時代から、
+    インターネットを通じて音楽データを購入したり、
+    サブスクで音楽を聴いたりする時代になりました。<br>
+    この購入方法の違いによって、音楽の聴かれ方も
+    大きく変わったように思います。
+
+<br><br>
+
+    1970年代から1980年代はレコードの時代でした。
+    シングル盤は真ん中に大きな穴が開いているドーナツ盤。
+    片面に1曲ずつ収録され、表側をA面、裏側をB面と呼んでいました。<br>
+    音楽を聴くためにはレコード店に行ってレコードを買う。
+    そんな時代でした。
+
+<br>
+
+    その後、1990年代から2000年代にかけては
+    8cmシングルCDが広く使われるようになりました。
+    通常のCDが12cmなのに対して、シングルCDは8cm。
+    レコードのシングル盤と同じように、
+    メインとなる曲とカップリング曲を収録したものが一般的でした。<br>
+    その後、8cmサイズよりも扱いやすい12cmサイズの
+    マキシシングルCDが主流になっていきました。
+
+<br>
+
+    そして2000年代に入ると、インターネットを利用した
+    音楽配信が広がり、その後サブスクで音楽を聴く時代へと
+    移っていきました。<br>
+
+    この間に音質は飛躍的に向上してきましたが、
+    ネット配信の初期には通信速度やデータ容量の制約から
+    音声データを圧縮する必要があり、
+    CDから配信へ移ったことで音質が一時的に
+    後退したように感じられた時期もありました。
+
+<br><br>
+
+    レコード、CDの時代は、テレビやラジオから
+    楽曲のヒットが始まることが多かったように思います。<br>
+
+    当時のテレビやラジオの視聴者は、子供からお年寄りまで
+    比較的幅広い世代でした。<br>
+    テレビやラジオで新曲が取り上げられ、
+    それが多くの人に受け入れられると、
+    そこからヒットが生まれていきました。
+
+<br><br>
+
+    それがネット配信やサブスクでの視聴が中心になってからは、
+    SNSなどを通じて特定の曲が一気に広がるという、
+    以前とは違ったヒットの仕方をするようになりました。<br>
+
+    SNSで広がりやすい短いフレーズや印象的なリズム、
+    ダンスと組み合わせやすい楽曲などに
+    人気が集中することもあります。<br>
+
+    そうした音楽の聴かれ方の変化に合わせて、
+    楽曲制作の側も変化しているのかもしれません。
+    <br><br>
+    2026.11
+
+
+</p>
+
+        </div>
+
+
+
+    <div class="contact-link">
+
+      <a href="../contact.html">
+
+       ご意見、お問い合わせ 
+
+      </a>
+    </div>
+
+    <div class="back-link">
+
+        
+            → たかじいの音楽ひとりごと 「制作方法の変化」は来月公開予定です 
+        </a>
+
+    </div>
+
+
+    <div class="back-link">
+
+        <a href="essay01.html">
+            ← たかじいの音楽ひとりごと TOPページへ戻る
+        </a>
+
+    </div>
+
+
+    <div class="back-link">
+
+        <a href="index.html">
+            ← レコード棚に戻る
+        </a>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<audio
+    id="bgm"
+    loop>
+
+    <source
+        src="../audio/bgm001.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<button id="bgm-button">
+    ♪ BGM ON
+</button>
+
+
+
+
+<script>
+
+const button =
+document.getElementById("bgm-button");
+
+const bgm =
+document.getElementById("bgm");
+
+bgm.volume = 0.15;
+
+
+
+let playing =
+localStorage.getItem("bgmPlaying")
+=== "true";
+
+
+
+if(playing){
+
+    bgm.play();
+
+    button.textContent =
+    "♪ BGM OFF";
+
+}else{
+
+    button.textContent =
+    "♪ BGM ON";
+}
+
+
+
+button.onclick = () => {
+
+    if(!playing){
+
+        bgm.play();
+
+        button.textContent =
+        "♪ BGM OFF";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "true"
+        );
+
+    }else{
+
+        bgm.pause();
+
+        button.textContent =
+        "♪ BGM ON";
+
+        localStorage.setItem(
+            "bgmPlaying",
+            "false"
+        );
+    }
+
+    playing = !playing;
+};
+
+</script>
+
+<script data-goatcounter="https://rizebooks.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+
+</html>
+
